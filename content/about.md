@@ -29,7 +29,7 @@ date = 2024-01-12T12:06:45+02:00
           <textarea id="message" name="message"></textarea>
         </div>
 
-        <div class="cf-turnstile" data-sitekey="1x00000000000000000000AA"></div>
+        <div class="cf-turnstile" data-sitekey="0x4AAAAAAAP5xU5P2WCx7Nyj"></div>
 
         <button type="submit">Submit</button>
       </form>
