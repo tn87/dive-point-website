@@ -1,29 +1,35 @@
-/**
- * POST /api/submit
- */
-export async function onRequestPost(context) {
-  try {
-    let input = await context.request.formData();
-
-    // Convert FormData to JSON
-    // NOTE: Allows multiple values per key
-    let output = {};
-    for (let [key, value] of input) {
-      let tmp = output[key];
-      if (tmp === undefined) {
-        output[key] = value;
-      } else {
-        output[key] = [].concat(tmp, value);
-      }
-    }
-
-    let pretty = JSON.stringify(output, null, 2);
-    return new Response(pretty, {
-      headers: {
-        "Content-Type": "application/json;charset=utf-8",
+let content = "";
+for (var i of request.headers.entries()) {
+  content += i[0] + ": " + i[1] + "\n";
+}
+let send_request = new Request("https://api.mailchannels.net/tx/v1/send", {
+  method: "POST",
+  headers: {
+    "content-type": "application/json",
+  },
+  body: JSON.stringify({
+    personalizations: [
+      { to: [{ email: "recipient@example.com", name: "Test Recipient" }] },
+    ],
+    from: {
+      email: "sender@example.com",
+      name: "Test Sender",
+    },
+    subject: "Test Subject",
+    content: [
+      {
+        type: "text/plain",
+        value: "Test message content\n\n" + content,
       },
-    });
-  } catch (err) {
-    return new Response("Error parsing JSON content", { status: 400 });
-  }
+    ],
+  }),
+});
+
+let respContent = "";
+// only send the mail on "POST", to avoid spiders, etc.
+if (request.method == "POST") {
+  const resp = await fetch(send_request);
+  const respText = await resp.text();
+
+  respContent = resp.status + " " + resp.statusText + "\n\n" + respText;
 }
