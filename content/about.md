@@ -13,26 +13,53 @@ date = 2024-01-12T12:06:45+02:00
   {{< rawhtml >}}
   <h1>Contact Me</h1>
 
-      <form method="POST" action="/api/contact">
-        <div>
-          <label for="name">Name:</label>
-          <input id="name" name="name" type="text" />
-        </div>
+    <form method="POST" action="/api/submit">
+      <div class="input">
+        <label for="name">Full Name</label>
+        <input id="name" name="name" type="text" />
+      </div>
 
-        <div>
-          <label for="email">Email:</label>
-          <input id="email" name="email" type="email" />
-        </div>
+      <div class="input">
+        <label for="email">Email Address</label>
+        <input id="email" name="email" type="email" />
+      </div>
 
-        <div>
-          <label for="message">Message:</label>
-          <textarea id="message" name="message"></textarea>
-        </div>
+      <div class="input">
+        <label for="referers">How did you hear about us?</label>
+        <select id="referers" name="referers">
+          <option hidden disabled selected value></option>
+          <option value="Facebook">Facebook</option>
+          <option value="Twitter">Twitter</option>
+          <option value="Google">Google</option>
+          <option value="Bing">Bing</option>
+          <option value="Friends">Friends</option>
+        </select>
+      </div>
 
-        <div class="cf-turnstile" data-sitekey="0x4AAAAAAAP5xU5P2WCx7Nyj"></div>
+      <div class="checklist">
+        <label>What are your favorite movies?</label>
+        <ul>
+          <li>
+            <input id="m1" type="checkbox" name="movies" value="Space Jam" />
+            <label for="m1">Space Jam</label>
+          </li>
+          <li>
+            <input id="m2" type="checkbox" name="movies" value="Little Rascals" />
+            <label for="m2">Little Rascals</label>
+          </li>
+          <li>
+            <input id="m3" type="checkbox" name="movies" value="Frozen" />
+            <label for="m3">Frozen</label>
+          </li>
+          <li>
+            <input id="m4" type="checkbox" name="movies" value="Home Alone" />
+            <label for="m4">Home Alone</label>
+          </li>
+        </ul>
+      </div>
 
-        <button type="submit">Submit</button>
-      </form>
+      <button type="submit">Submit</button>
 
+    </form>
   {{< /rawhtml >}}
   <!-- prettier-ignore-end -->
