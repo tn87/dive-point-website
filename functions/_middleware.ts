@@ -10,7 +10,5 @@ export const onRequest: PagesFunction = mailChannelsPlugin({
     name: "Dive-Point-Webmailer",
     email: "support@d1ve.xyz",
   },
-  respondWith: () => {
-    return Response.redirect(home, 301);
-  },
+  return Response.redirect(home, 301);
 });
