@@ -28,7 +28,7 @@ async function handleRequest({ request }) {
 }
 
 async function validateToken(ip, token) {
-  const TURNSTILE_SECRET_KEY = "1x0000000000000000000000000000000AA";
+  const TURNSTILE_SECRET_KEY = "0x4AAAAAAAP5xZtd2fj0PmLQzLLMC-VtDBE";
 
   const formData = new FormData();
   formData.append("secret", TURNSTILE_SECRET_KEY);
