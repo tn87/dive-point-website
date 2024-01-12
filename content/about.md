@@ -8,58 +8,23 @@ date = 2024-01-12T12:06:45+02:00
 - a
 - b
 - c
-  <!-- prettier-ignore-start -->
 
-  {{< rawhtml >}}
+<!-- prettier-ignore-start -->
+
+{{< rawhtml >}}
+
   <h1>Contact Me</h1>
-
-    <form method="POST" action="/api/submit">
-      <div class="input">
-        <label for="name">Full Name</label>
-        <input id="name" name="name" type="text" />
+    <form data-static-form-name="contact">
+      <div>
+        <label>Name<input type="text" name="name" /></label>
       </div>
-
-      <div class="input">
-        <label for="email">Email Address</label>
-        <input id="email" name="email" type="email" />
+      <div>
+        <label>Email<input type="email" name="email" /></label>
       </div>
-
-      <div class="input">
-        <label for="referers">How did you hear about us?</label>
-        <select id="referers" name="referers">
-          <option hidden disabled selected value></option>
-          <option value="Facebook">Facebook</option>
-          <option value="Twitter">Twitter</option>
-          <option value="Google">Google</option>
-          <option value="Bing">Bing</option>
-          <option value="Friends">Friends</option>
-        </select>
+      <div>
+        <label>Message<textarea name="message"></textarea></label>
       </div>
-
-      <div class="checklist">
-        <label>What are your favorite movies?</label>
-        <ul>
-          <li>
-            <input id="m1" type="checkbox" name="movies" value="Space Jam" />
-            <label for="m1">Space Jam</label>
-          </li>
-          <li>
-            <input id="m2" type="checkbox" name="movies" value="Little Rascals" />
-            <label for="m2">Little Rascals</label>
-          </li>
-          <li>
-            <input id="m3" type="checkbox" name="movies" value="Frozen" />
-            <label for="m3">Frozen</label>
-          </li>
-          <li>
-            <input id="m4" type="checkbox" name="movies" value="Home Alone" />
-            <label for="m4">Home Alone</label>
-          </li>
-        </ul>
-      </div>
-
-      <button type="submit">Submit</button>
-
+      <button type="submit">Send!</button>
     </form>
-  {{< /rawhtml >}}
-  <!-- prettier-ignore-end -->
+{{< /rawhtml >}}
+<!-- prettier-ignore-end -->
