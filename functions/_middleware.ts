@@ -12,4 +12,4 @@ export const onRequest: PagesFunction = mailChannelsPlugin({
   },
   respondWith: () => {
     return Response.redirect(/faq/, 302);
-  });
+  }});
