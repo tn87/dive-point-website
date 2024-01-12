@@ -6,7 +6,7 @@ export const onRequest = mailchannelsPlugin({
       to: [{ name: "ACME Support", email: "mail@tn87.de" }],
     },
   ],
-  from: { name: "Enquiry", email: "no-replyd1ve.xyz" },
+  from: { name: "Enquiry", email: "no-reply@d1ve.xyz" },
   respondWith: () =>
     new Response(null, {
       status: 302,
