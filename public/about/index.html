@@ -36,7 +36,7 @@
 
 
 
-<link href="/css/custom.css?1705056967" rel="stylesheet">
+<link href="/css/custom.css?1705061379" rel="stylesheet">
 
 
 
@@ -650,7 +650,30 @@
 <ul>
 <li>a</li>
 <li>b</li>
-<li>c</li>
+<li>c
+
+
+  <form method="POST" action="/api/contact">
+        <div>
+          <label for="name">Name:</label>
+          <input id="name" name="name" type="text" />
+        </div>
+
+        <div>
+          <label for="email">Email:</label>
+          <input id="email" name="email" type="email" />
+        </div>
+
+        <div>
+          <label for="message">Message:</label>
+          <textarea id="message" name="message"></textarea>
+        </div>
+
+        <button type="submit">Submit</button>
+
+</form>
+
+</li>
 </ul>
 
                         </div>
