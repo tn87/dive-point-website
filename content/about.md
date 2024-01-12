@@ -9,8 +9,7 @@ date = 2024-01-12T12:06:45+02:00
 <!-- prettier-ignore-start -->
 {{< rawhtml >}}
   <h1>Contact Me</h1>
-    <form data-static-form-name="contact">
-    <form data-static-form-name="email-test1">
+    <form data-static-form-name="contact" action="faq" >
       <div>
         <label>Name<input type="text" name="name" /></label>
       </div>
