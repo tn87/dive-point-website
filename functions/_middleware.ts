@@ -11,5 +11,6 @@ export const onRequest: PagesFunction = mailChannelsPlugin({
     email: "support@d1ve.xyz",
   },
   respondWith: () => {
-    return Response.redirect('/faq/', 302);
-  }});
+    return Response.redirect(home, 301);
+  },
+});
