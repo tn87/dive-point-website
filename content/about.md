@@ -1,7 +1,16 @@
++++
+title = 'About'
+date = 2024-01-12T12:06:45+02:00
++++
+# About
+- a
+- b
+- c
 <!-- prettier-ignore-start -->
 {{< rawhtml >}}
   <h1>Contact Me</h1>
-    <form data-static-form-name="book">
+    <form data-static-form-name="contact">
+    <form data-static-form-name="email-test1">
       <div>
         <label>Name<input type="text" name="name" /></label>
       </div>
