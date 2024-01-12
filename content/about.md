@@ -8,8 +8,12 @@ date = 2024-01-12T12:06:45+02:00
 - a
 - b
 - c
+  <!-- prettier-ignore-start -->
+
   {{< rawhtml >}}
-  <form method="POST" action="/api/contact">
+  <h1>Contact Me</h1>
+
+      <form method="POST" action="/api/contact">
         <div>
           <label for="name">Name:</label>
           <input id="name" name="name" type="text" />
@@ -25,7 +29,10 @@ date = 2024-01-12T12:06:45+02:00
           <textarea id="message" name="message"></textarea>
         </div>
 
-        <button type="submit">Submit</button>
+        <div class="cf-turnstile" data-sitekey="1x00000000000000000000AA"></div>
 
-</form>
-{{< /rawhtml >}}
+        <button type="submit">Submit</button>
+      </form>
+
+  {{< /rawhtml >}}
+  <!-- prettier-ignore-end -->
