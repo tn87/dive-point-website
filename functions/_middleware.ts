@@ -24,20 +24,9 @@ async function handleRequest({ request }) {
     return new Response("Token validation failed", { status: 403 });
   }
 
-  const onRequest: PagesFunction = mailChannelsPlugin({
-    personalizations: [
-      {
-        to: [{ name: "DP-Booking", email: "divepoint@tn87.de" }],
-      },
-    ],
-    from: {
-      name: "Dive-Point-Webmailer",
-      email: "support@d1ve.xyz",
-    },
-    respondWith: () => {
-      return Response.redirect("https://d1ve.xyz/thankyou/", 302);
-    },
-  });
+  await forwardMessage(name, email, message);
+
+  return new Response("OK", { status: 200 });
 }
 
 async function validateToken(ip, token) {
@@ -58,4 +47,21 @@ async function validateToken(ip, token) {
   const outcome = await result.json();
 
   return outcome.success;
+}
+
+async function forwardMessage(name, email, message) {
+  const onRequest: PagesFunction = mailChannelsPlugin({
+    personalizations: [
+      {
+        to: [{ name: "DP-Booking", email: "divepoint@tn87.de" }],
+      },
+    ],
+    from: {
+      name: "Dive-Point-Webmailer",
+      email: "support@d1ve.xyz",
+    },
+    respondWith: () => {
+      return Response.redirect("https://d1ve.xyz/thankyou/", 302);
+    },
+  });
 }
