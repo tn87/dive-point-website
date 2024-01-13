@@ -25,6 +25,6 @@ async function handlePost(request) {
 
   const outcome = await result.json();
   if (outcome.success) {
-    // ...
+    return Response.redirect("https://d1ve.xyz/thankyou/", 302);
   }
 }
